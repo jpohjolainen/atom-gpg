@@ -40,8 +40,7 @@ module.exports =
       # do changes in reverse order to prevent overlapping
       for point in sorted.reverse()
         i = @startPoints[point.start.toString()]
-        range = @ranges[i]
-        @editor.setTextInBufferRange range, @buffer[i]
+        @editor.setTextInBufferRange @ranges[i], @buffer[i]
       @editor.getBuffer().groupChangesSinceCheckpoint(cp)
 
   run: (func) ->
