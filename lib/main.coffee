@@ -6,7 +6,7 @@ module.exports =
   config:
     gpgExecutable:
       type: 'string'
-      default: ''
+      default: undefined
     gpgHomeDir:
       type: 'string'
       default: ''
@@ -15,7 +15,7 @@ module.exports =
       default: ''
     gpgRecipientsFile:
       type: 'string'
-      default: ''
+      default: undefined
 
   activate: ->
     console.log 'activate gpg'

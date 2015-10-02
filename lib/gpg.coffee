@@ -55,20 +55,34 @@ gpgEncrypt = (text, index, callback, exit_cb) ->
   gpgHomeDir = atom.config.get 'atom-gpg.gpgHomeDir'
   gpgRecipients = atom.config.get 'atom-gpg.gpgRecipients'
   gpgRecipientsFile = atom.config.get 'atom-gpg.gpgRecipientsFile'
+  gpgRecipientsFile ?= 'gpg.recipients'
 
   if gpgHomeDir
     args.push '--homedir ' + gpgHomeDir
 
   args.push '--encrypt'
 
-  if gpgRecipientsFile
+  recipients = ''
+  if gpgRecipients.indexOf('/') > -1
     recipients = fs.readFileSync gpgRecipientsFile, 'utf8'
-    gpgRecipients = recipients.replace /\n/g, ','
+  else
+    cwd = atom.project.getRepositories()?[0]?.getWorkingDirectory()
+    cwd ?= atom.project.getPaths()?[0]
+    recipientsFile = cwd + '/' + gpgRecipientsFile
+
+    try recipients = fs.readFileSync recipientsFile, 'utf8'
+    catch ENOENT
+      () ->
+
+  gpgRecipients += ',' + recipients.replace /\n/g, ','
 
   if gpgRecipients
     recipients = gpgRecipients.split(',')
     _.map recipients, (r) ->
       args.push '-r ' + r if r
+
+  console.log gpgRecipients, gpgRecipientsFile
+
 
   gpgCommand
     args: args
