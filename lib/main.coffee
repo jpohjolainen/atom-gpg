@@ -4,6 +4,8 @@ gpg = require './gpg'
 
 module.exports =
   config:
+    gpgExecutable:
+      type: 'string'
     gpgHomeDir:
       type: 'string'
       default: ''
