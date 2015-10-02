@@ -6,6 +6,7 @@ module.exports =
   config:
     gpgExecutable:
       type: 'string'
+      default: ''
     gpgHomeDir:
       type: 'string'
       default: ''
