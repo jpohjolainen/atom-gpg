@@ -1,4 +1,5 @@
 _ = require 'underscore-plus'
+fs = require 'fs'
 {BufferedProcess} = require 'atom'
 
 gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
@@ -16,11 +17,15 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
   args.push '--armor'
   args.push '--batch'
   args.push '--no-tty'
+  args.push '--trust-model'
+  args.push 'always'
 
+  command = atom.config.get 'atom-gpg.gpgExecutable'
+  command ?= 'gpg'
 
   # console.log 'gpg ' + args.join(' ')
   bp = new BufferedProcess
-    command: 'gpg'
+    command: command
     args: args
     options: options
     stdout: stdout
@@ -49,21 +54,24 @@ gpgEncrypt = (text, index, callback, exit_cb) ->
   args = []
   gpgHomeDir = atom.config.get 'atom-gpg.gpgHomeDir'
   gpgRecipients = atom.config.get 'atom-gpg.gpgRecipients'
-  gpgRecipientsFile = atom.config.get 'atom-gpg.gpgRecipientFile'
+  gpgRecipientsFile = atom.config.get 'atom-gpg.gpgRecipientsFile'
 
   if gpgHomeDir
     args.push '--homedir ' + gpgHomeDir
 
   args.push '--encrypt'
 
+  if gpgRecipientsFile
+    recipients = fs.readFileSync gpgRecipientsFile, 'utf8'
+    gpgRecipients = recipients.replace /\n/g, ','
+
+  console.log gpgRecipients
   if gpgRecipients
     recipients = gpgRecipients.split(',')
     _.map recipients, (r) ->
-      args.push '-r ' + r
+      args.push '-r ' + r if r
 
-  if gpgRecipientsFile and not gpgRecipients
-    args.push '--recipients-file ' + gpgRecipientsFile
-
+  console.log ">>", args
   gpgCommand
     args: args
     stdout: stdout
