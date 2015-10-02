@@ -65,13 +65,11 @@ gpgEncrypt = (text, index, callback, exit_cb) ->
     recipients = fs.readFileSync gpgRecipientsFile, 'utf8'
     gpgRecipients = recipients.replace /\n/g, ','
 
-  console.log gpgRecipients
   if gpgRecipients
     recipients = gpgRecipients.split(',')
     _.map recipients, (r) ->
       args.push '-r ' + r if r
 
-  console.log ">>", args
   gpgCommand
     args: args
     stdout: stdout
