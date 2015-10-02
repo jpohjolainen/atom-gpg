@@ -1,0 +1,18 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  'atom-workspace': [
+    {label: 'GPG Encrypt', command: 'atom-gpg:encrypt-selections'},
+    {label: 'GPG Decrypt', command: 'atom-gpg:decrypt-selections'}]
+
+'menu': [
+  {
+    label: 'Packages'
+    submenu: [
+      label: 'GPG'
+      submenu: [
+        { label: 'GPG Encrypt', command: 'atom-gpg:encrypt-selections' }
+        { label: 'GPG Decrypt', command: 'atom-gpg:decrypt-selections' }
+      ]
+    ]
+  }
+]
