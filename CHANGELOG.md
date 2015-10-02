@@ -2,6 +2,8 @@
 #### [Current]
 
 #### 
+ * [2baa3e9](../../commit/2baa3e9) - __(Janne Pohjolainen)__ updated description
+ * [8256008](../../commit/8256008) - __(Janne Pohjolainen)__ changelog
  * [4fac09d](../../commit/4fac09d) - __(Janne Pohjolainen)__ updated readme
  * [d38d0ac](../../commit/d38d0ac) - __(Janne Pohjolainen)__ updated doc
  * [eb03d85](../../commit/eb03d85) - __(Janne Pohjolainen)__ removed debug prints
