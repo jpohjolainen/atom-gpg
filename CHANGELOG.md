@@ -1,7 +1,11 @@
 
 #### [Current]
+ * [0d116e1](../../commit/0d116e1) - __(Janne Pohjolainen)__ Added information about recipients config
+ * [f4ed208](../../commit/f4ed208) - __(Janne Pohjolainen)__ added paths for the gpg.recpients file.
 
-#### 
+#### v0.1.0
+ * [6ea094b](../../commit/6ea094b) - __(Janne Pohjolainen)__ Prepare 0.1.0 release
+ * [0b6640e](../../commit/0b6640e) - __(Janne Pohjolainen)__ changelog update
  * [2baa3e9](../../commit/2baa3e9) - __(Janne Pohjolainen)__ updated description
  * [8256008](../../commit/8256008) - __(Janne Pohjolainen)__ changelog
  * [4fac09d](../../commit/4fac09d) - __(Janne Pohjolainen)__ updated readme
