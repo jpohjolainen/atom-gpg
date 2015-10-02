@@ -2,7 +2,7 @@
   "name": "atom-gpg",
   "main": "./lib/main",
   "version": "0.2.1",
-  "description": "Package to encrypt/decrypt selections with gpg.",
+  "description": "GPG Encryption for Atom.",
   "repository": "https://github.com/jpohjolainen/atom-gpg",
   "license": "MIT",
   "activationCommands": {
