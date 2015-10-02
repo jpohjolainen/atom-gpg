@@ -81,9 +81,6 @@ gpgEncrypt = (text, index, callback, exit_cb) ->
     _.map recipients, (r) ->
       args.push '-r ' + r if r
 
-  console.log gpgRecipients, gpgRecipientsFile
-
-
   gpgCommand
     args: args
     stdout: stdout
