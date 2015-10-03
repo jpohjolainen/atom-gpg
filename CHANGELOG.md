@@ -1,5 +1,10 @@
 
 #### [Current]
+
+
+#### v0.2.4
+ * [9200fdb](../../commit/9200fdb) - __(Janne Pohjolainen)__ Prepare 0.2.4 release
+ * [0594ec8](../../commit/0594ec8) - __(Janne Pohjolainen)__ changelog update
  * [5032abe](../../commit/5032abe) - __(Janne Pohjolainen)__ updated readme
  * [6f22100](../../commit/6f22100) - __(Janne Pohjolainen)__ better error notifications and fixed recipients
  * [7ba67a6](../../commit/7ba67a6) - __(Janne Pohjolainen)__ added quiet to gpg arguments
