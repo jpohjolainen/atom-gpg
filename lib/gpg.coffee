@@ -12,8 +12,7 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
     errorText = data.toString()
     console.log errorText
 
-  exit ?= (code) -> console.log "exited: " + code
-
+  args.push '-q'
   args.push '--armor'
   args.push '--batch'
   args.push '--no-tty'
