@@ -6,11 +6,10 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
   options ?= {}
   options.stdio ?= ['pipe', null, null]
 
-  stdout ?= (data) -> console.log data?.toString()
-
   stderr ?= (data) ->
     errorText = data.toString()
     console.log errorText
+    atom.notifications.addError 'Error', { detail: errorText, dismissable: true }
 
   args.push '-q'
   args.push '--armor'
@@ -34,20 +33,20 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
 
   bp.process.stdin.on 'error', (error) =>
     return if error.code == 'EPIPE'
-    console.error error.message
+    atom.notifications.addError error.message
 
   bp.process.on 'error', (error) =>
     if error.code == 'ENOENT'
       msg = "Error executing '#{error.path}', check settings!"
     else
       msg = error.message
-    console.log msg
+    atom.notifications.addError msg
 
   bp.process.stdin?.write(data)
   bp.process.stdin?.end()
 
 
-gpgEncrypt = (text, index, callback, exit_cb) ->
+gpgEncrypt = (text, index, callback, stderr_cb, exit_cb) ->
   stdout = (data) ->
     callback index, data
 
@@ -55,39 +54,57 @@ gpgEncrypt = (text, index, callback, exit_cb) ->
   gpgHomeDir = atom.config.get 'atom-gpg.gpgHomeDir'
   gpgRecipients = atom.config.get 'atom-gpg.gpgRecipients'
   gpgRecipientsFile = atom.config.get 'atom-gpg.gpgRecipientsFile'
-  gpgRecipientsFile ?= 'gpg.recipients'
+  if not gpgRecipientsFile
+    gpgRecipientsFile = 'gpg.recipients'
 
   if gpgHomeDir
     args.push '--homedir ' + gpgHomeDir
 
   args.push '--encrypt'
 
-  recipients = ''
-  if gpgRecipients.indexOf('/') > -1
-    recipients = fs.readFileSync gpgRecipientsFile, 'utf8'
-  else
-    cwd = atom.project.getRepositories()?[0]?.getWorkingDirectory()
-    cwd ?= atom.project.getPaths()?[0]
-    recipientsFile = cwd + '/' + gpgRecipientsFile
+  cwd = atom.project.getRepositories()?[0]?.getWorkingDirectory()
+  cwd ?= atom.project.getPaths()?[0]
+  cwd ?= atom.workspace.getActiveTextEditor()?.getBuffer().getPath()
 
-    try recipients = fs.readFileSync recipientsFile, 'utf8'
-    catch ENOENT
-      () ->
+  # add project base dir or file's current working dir to gpgRecipientsFile
+  # if path is not included.
+  if gpgRecipientsFile.indexOf('/') == -1
+    gpgRecipientsFile = cwd + '/' + gpgRecipientsFile
 
-  gpgRecipients += ',' + recipients.replace /\n/g, ','
+  # try to read recipients file and ignore errors
+  fileRecipients = ''
+  try fileRecipients = fs.readFileSync recipientsFile, 'utf8'
+  catch ENOENT
+    () ->
 
-  if gpgRecipients
-    recipients = gpgRecipients.split(',')
-    _.map recipients, (r) ->
-      args.push '-r ' + r if r
+  # add recipients file content to recipients string delimitered by comma
+  gpgRecipients += ',' + fileRecipients.replace /\n/g, ','
+
+  # split recipients string into array and discard empty strings
+  recipients = gpgRecipients.split ','
+  recipients = _.filter recipients, (r) -> r
+
+  if recipients.length < 1
+    message = 'Add recipient user ids in atom-gpg package settings'
+    if cwd
+      message += '\nor create \'' + cwd + '/' + gpgRecipientsFile + '\' file with one user id per line.'
+    atom.notifications.addError 'No GPG recipients defined.', {
+      detail: message
+    }
+    return false
+
+  # create gpg arguments from recipients
+  _.map recipients, (r) ->
+    args.push '-r ' + r if r
 
   gpgCommand
     args: args
     stdout: stdout
+    stderr: stderr_cb
     data: text
     exit: exit_cb
 
-gpgDecrypt = (text, index, callback, exit_cb) ->
+gpgDecrypt = (text, index, callback, stderr_cb, exit_cb) ->
   stdout = (data) ->
     callback index, data
 
@@ -102,6 +119,7 @@ gpgDecrypt = (text, index, callback, exit_cb) ->
   gpgCommand
     args: args
     stdout: stdout
+    stderr: stderr_cb
     data: text
     exit: exit_cb
 

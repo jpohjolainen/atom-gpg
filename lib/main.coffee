@@ -29,10 +29,20 @@ module.exports =
     else
       @buffer[idx] = text
 
+  bufferErrors: (text) ->
+    @errors += text
+
   setSelections: (code) ->
     @rangeCount--
 
+    if code != 0
+      atom.notifications.addError 'GPG Error', {
+        detail: @errors
+        dismissable: false 
+      }
+
     if @rangeCount < 1
+
       # sort by range start point
       sorted = _.values(@ranges).sort (a, b) ->
         a.start.compare(b.start)
@@ -43,6 +53,8 @@ module.exports =
       # do changes in reverse order to prevent overlapping
       for point in sorted.reverse()
         i = @startPoints[point.start.toString()]
+        if not @buffer[i]
+          continue
         @editor.setTextInBufferRange @ranges[i], @buffer[i]
       @editor.getBuffer().groupChangesSinceCheckpoint(cp)
 
@@ -51,6 +63,7 @@ module.exports =
     @startPoints = {}
     @ranges = {}
     @buffer = {}
+    @errors = ''
 
     @editor = atom.workspace.getActiveTextEditor()
 
@@ -65,9 +78,11 @@ module.exports =
       bufferedRead = (idx, txt) =>
         output = txt
         @bufferSetText idx, output
+      stderr_cb = (data) =>
+        @bufferErrors data.toString()
       exit_cb = (code) =>
         @setSelections code
 
-      func text, @selectionIndex, bufferedRead, exit_cb
+      func text, @selectionIndex, bufferedRead, stderr_cb, exit_cb
 
       @selectionIndex++
