@@ -1,5 +1,11 @@
 
 #### [Current]
+
+
+#### v0.2.3
+ * [ae5a918](../../commit/ae5a918) - __(Janne Pohjolainen)__ Prepare 0.2.3 release
+ * [c00a4b3](../../commit/c00a4b3) - __(Janne Pohjolainen)__ updated keys
+ * [b195a5a](../../commit/b195a5a) - __(Janne Pohjolainen)__ update
  * [32aa430](../../commit/32aa430) - __(Janne Pohjolainen)__ changed to easier keys
 
 #### v0.2.2
