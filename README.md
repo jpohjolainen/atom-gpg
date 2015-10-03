@@ -20,7 +20,7 @@ If you get error message "Failed to spawn command gpg. Make sure gpg is installe
 
 ## Usage
 
-Select text and press ```ctrl-alt-shift-e``` to encrypt or ```ctrl-alt-shift-d``` to decrypt.
+Select text and press ```ctrl-shift-e``` to encrypt or ```ctrl-shift-d``` to decrypt.
 
 Optionally you can also use context menu with right mouse button and select either _GPG Encrypt_ or
 _GPG Decrypt_. Same options can be found under menu __Packages__ -> __GPG__.
