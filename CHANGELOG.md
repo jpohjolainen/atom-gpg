@@ -1,5 +1,18 @@
 
 #### [Current]
+ * [32aa430](../../commit/32aa430) - __(Janne Pohjolainen)__ changed to easier keys
+
+#### v0.2.2
+ * [d950cc6](../../commit/d950cc6) - __(Janne Pohjolainen)__ Prepare 0.2.2 release
+ * [9feb238](../../commit/9feb238) - __(Janne Pohjolainen)__ updated description
+
+#### v0.2.1
+ * [b4dd77c](../../commit/b4dd77c) - __(Janne Pohjolainen)__ Prepare 0.2.1 release
+ * [066a0ba](../../commit/066a0ba) - __(Janne Pohjolainen)__ removed debug prints
+
+#### v0.2.0
+ * [62669a7](../../commit/62669a7) - __(Janne Pohjolainen)__ Prepare 0.2.0 release
+ * [e7a58f5](../../commit/e7a58f5) - __(Janne Pohjolainen)__ update
  * [0d116e1](../../commit/0d116e1) - __(Janne Pohjolainen)__ Added information about recipients config
  * [f4ed208](../../commit/f4ed208) - __(Janne Pohjolainen)__ added paths for the gpg.recpients file.
 
