@@ -1,6 +1,10 @@
 
 #### [Current]
-
+ * [5032abe](../../commit/5032abe) - __(Janne Pohjolainen)__ updated readme
+ * [6f22100](../../commit/6f22100) - __(Janne Pohjolainen)__ better error notifications and fixed recipients
+ * [7ba67a6](../../commit/7ba67a6) - __(Janne Pohjolainen)__ added quiet to gpg arguments
+ * [fafc6a6](../../commit/fafc6a6) - __(Janne Pohjolainen)__ fixed undefined error for configuration defaults
+ * [35710ef](../../commit/35710ef) - __(Janne Pohjolainen)__ update
 
 #### v0.2.3
  * [ae5a918](../../commit/ae5a918) - __(Janne Pohjolainen)__ Prepare 0.2.3 release
