@@ -21,7 +21,8 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
   args.push 'always'
 
   command = atom.config.get 'atom-gpg.gpgExecutable'
-  command ?= 'gpg'
+  if not command
+    command = 'gpg'
 
   # console.log 'gpg ' + args.join(' ')
   bp = new BufferedProcess
