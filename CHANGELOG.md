@@ -1,6 +1,7 @@
 
 #### [Current]
-
+ * [3414237](../../commit/3414237) - __(Janne Pohjolainen)__ fixed atom version number issue
+ * [7d3d696](../../commit/7d3d696) - __(Janne Pohjolainen)__ updated changelog for 0.2.4
 
 #### v0.2.4
  * [9200fdb](../../commit/9200fdb) - __(Janne Pohjolainen)__ Prepare 0.2.4 release
