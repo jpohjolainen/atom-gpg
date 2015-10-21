@@ -58,7 +58,7 @@ gpgEncrypt = (text, index, callback, stderr_cb, exit_cb) ->
     gpgRecipientsFile = 'gpg.recipients'
 
   if gpgHomeDir
-    args.push '--homedir ' + gpgHomeDir
+    args.push '--homedir=' + gpgHomeDir
 
   args.push '--encrypt'
 
