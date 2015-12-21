@@ -1,5 +1,18 @@
 
 #### [Current]
+ * [b85099d](../../commit/b85099d) - __(Janne Pohjolainen)__ Fixed bugs, code cleaning and indentation.
+ * [c19ca3c](../../commit/c19ca3c) - __(Janne Pohjolainen)__ Merge pull request [#2](../../issues/2) from cheekyhalf/master
+
+fix reading of gpgRecipientsFile
+ * [c3427bf](../../commit/c3427bf) - __(Janne Pohjolainen)__ Merge pull request [#1](../../issues/1) from BartG95/patch-1
+
+Fixed homedir error
+ * [0427a8c](../../commit/0427a8c) - __(Simon Thompson)__ fix reading of gpgRecipientsFile
+ * [e5fcddb](../../commit/e5fcddb) - __(Bart Groeneveld)__ Fixed homedir error
+
+#### v0.2.5
+ * [c902cca](../../commit/c902cca) - __(Janne Pohjolainen)__ Prepare 0.2.5 release
+ * [b6fa7cb](../../commit/b6fa7cb) - __(Janne Pohjolainen)__ update
  * [3414237](../../commit/3414237) - __(Janne Pohjolainen)__ fixed atom version number issue
  * [7d3d696](../../commit/7d3d696) - __(Janne Pohjolainen)__ updated changelog for 0.2.4
 
