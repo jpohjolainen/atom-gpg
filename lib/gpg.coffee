@@ -22,7 +22,6 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
   if not command
     command = 'gpg'
 
-  # console.log 'gpg ' + args.join(' ')
   bp = new BufferedProcess
     command: command
     args: args
@@ -32,8 +31,7 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
     exit: exit
 
   bp.process.stdin.on 'error', (error) =>
-    return if error.code == 'EPIPE'
-    atom.notifications.addError error.message
+    atom.notifications.addError error.message if error.code != 'EPIPE'
 
   bp.process.on 'error', (error) =>
     if error.code == 'ENOENT'
