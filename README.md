@@ -44,3 +44,9 @@ You can encrypt and decrypt multiple selections.
 ### Recipients
 
 You need to specify recipients to encryption. You can either specify them in Settings `Gpg recipients` or have `gpg.recipients` (name of the file can be changed in the settings) file in the same directory or in root of Git repo. User IDs in the file will be appended to recipients define in the Settings.
+
+## YAML files
+
+When encrypting secrets in YAML files, atom-gpg will add '|' character and indent the following lines:
+
+![yaml](./yaml-example.png)
