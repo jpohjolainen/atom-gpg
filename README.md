@@ -41,6 +41,8 @@ _GPG Decrypt_. Same options can be found under menu __Packages__ -> __GPG__.
 
 You can encrypt and decrypt multiple selections.
 
+NOTE: If Atom fails to find GPG in the PATH, you can set the path to the binary in Settings page!
+
 ### Recipients
 
 You need to specify recipients to encryption. You can either specify them in Settings `Gpg recipients` or have `gpg.recipients` (name of the file can be changed in the settings) file in the same directory or in root of Git repo. User IDs in the file will be appended to recipients define in the Settings.
