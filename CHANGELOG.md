@@ -1,5 +1,12 @@
 
 #### [Current]
+ * [f549715](../../commit/f549715) - __(Janne Pohjolainen)__ added a note.
+ * [cb3e614](../../commit/cb3e614) - __(Janne Pohjolainen)__ Better error message in case Atom can't find gpg executable.
+ * [9aa976b](../../commit/9aa976b) - __(Janne Pohjolainen)__ Updated doc
+
+#### v0.3.0
+ * [13a11b4](../../commit/13a11b4) - __(Janne Pohjolainen)__ Prepare 0.3.0 release
+ * [3642d04](../../commit/3642d04) - __(Janne Pohjolainen)__ Changelog updated
  * [b85099d](../../commit/b85099d) - __(Janne Pohjolainen)__ Fixed bugs, code cleaning and indentation.
  * [c19ca3c](../../commit/c19ca3c) - __(Janne Pohjolainen)__ Merge pull request [#2](../../issues/2) from cheekyhalf/master
 
