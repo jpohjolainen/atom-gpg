@@ -30,15 +30,16 @@ gpgCommand = ({args, options, stdout, stderr, exit, data}={}) ->
     stderr: stderr
     exit: exit
 
+  bp.onWillThrowError (error) =>
+    if error.error.code == 'ENOENT'
+      msg = "Error executing '#{error.error.path}' in path '#{process.env.PATH}', check settings!"
+    else
+      msg = error.error.message
+    atom.notifications.addError msg
+    error.handle()
+
   bp.process.stdin.on 'error', (error) =>
     atom.notifications.addError error.message if error.code != 'EPIPE'
-
-  bp.process.on 'error', (error) =>
-    if error.code == 'ENOENT'
-      msg = "Error executing '#{error.path}', check settings!"
-    else
-      msg = error.message
-    atom.notifications.addError msg
 
   bp.process.stdin?.write(data)
   bp.process.stdin?.end()
