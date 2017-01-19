@@ -111,7 +111,7 @@ gpgDecrypt = (text, index, callback, stderr_cb, exit_cb) ->
   gpgHomeDir = atom.config.get 'atom-gpg.gpgHomeDir'
 
   if gpgHomeDir
-    args.push '--homedir ' + gpgHomeDir
+    args.push '--homedir=' + gpgHomeDir
 
   args.push '--decrypt'
 
