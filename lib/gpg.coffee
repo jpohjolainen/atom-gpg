@@ -122,5 +122,25 @@ gpgDecrypt = (text, index, callback, stderr_cb, exit_cb) ->
     data: text
     exit: exit_cb
 
+gpgSign = (text, index, callback, stderr_cb, exit_cb) ->
+  stdout = (data) ->
+    callback index, data
+
+  args = []
+  gpgHomeDir = atom.config.get 'atom-gpg.gpgHomeDir'
+
+  if gpgHomeDir
+    args.push '--homedir=' + gpgHomeDir
+
+  args.push '--clearsign'
+
+  gpgCommand
+    args: args
+    stdout: stdout
+    stderr: stderr_cb
+    data: text
+    exit: exit_cb
+
 module.exports.encrypt = gpgEncrypt
 module.exports.decrypt = gpgDecrypt
+module.exports.sign = gpgSign

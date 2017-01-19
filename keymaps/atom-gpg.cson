@@ -3,3 +3,4 @@
 'atom-text-editor':
   'ctrl-E': 'atom-gpg:encrypt-selections'
   'ctrl-D': 'atom-gpg:decrypt-selections'
+  'ctrl-S': 'atom-gpg:sign-selections'
