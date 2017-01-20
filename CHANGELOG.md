@@ -1,5 +1,15 @@
 
 #### [Current]
+
+ * [54eeeff](../../commit/54eeeff) - __(Stefan - Zipkid - Goethals)__ Add fix for ISSUE [#5](../../issues/5)
+
+https://github.com/jpohjolainen/atom-gpg/issues/5
+
+ * [acd601c](../../commit/acd601c) - __(Stefan - Zipkid - Goethals)__ Add sign capability
+
+#### v0.3.1
+ * [9421cfb](../../commit/9421cfb) - __(Janne Pohjolainen)__ Prepare 0.3.1 release
+ * [ea1307e](../../commit/ea1307e) - __(Janne Pohjolainen)__ Updated changelog
  * [f549715](../../commit/f549715) - __(Janne Pohjolainen)__ added a note.
  * [cb3e614](../../commit/cb3e614) - __(Janne Pohjolainen)__ Better error message in case Atom can't find gpg executable.
  * [9aa976b](../../commit/9aa976b) - __(Janne Pohjolainen)__ Updated doc
