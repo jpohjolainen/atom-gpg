@@ -22,6 +22,7 @@ module.exports =
     atom.commands.add 'atom-text-editor',
       'atom-gpg:encrypt-selections': => @run 'encrypt'
       'atom-gpg:decrypt-selections': => @run 'decrypt'
+      'atom-gpg:sign-selections':    => @run 'sign'
 
   bufferSetText: (idx, text) ->
     if @buffer[idx]
@@ -112,6 +113,8 @@ module.exports =
 
       if func_name == 'encrypt'
         func = gpg.encrypt
+      else if func_name == 'sign'
+        func = gpg.sign
       else
         func = gpg.decrypt
 
