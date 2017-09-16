@@ -34,7 +34,8 @@ Or install trough Atom Packages.
 
 ## Usage
 
-Select text and press ```ctrl-shift-e``` to encrypt or ```ctrl-shift-d``` to decrypt.
+Select text and press ```ctrl-shift-e``` to encrypt or ```ctrl-shift-d``` to decrypt. NEW: If no text is selected,
+operations are done on whole buffer.
 
 Optionally you can also use context menu with right mouse button and select either _GPG Encrypt_ or
 _GPG Decrypt_. Same options can be found under menu __Packages__ -> __GPG__.
