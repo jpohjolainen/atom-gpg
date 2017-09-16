@@ -91,7 +91,10 @@ module.exports =
     allSelectionRanges = @editor.getSelectedBufferRanges()
     @selectedRanges = _.reject allSelectionRanges, (s) -> s.start.isEqual(s.end)
     @rangeCount = @selectedRanges.length
-
+    if not @rangeCount
+      whole =
+      @selectedRanges = [ Range([@editor.getLastBufferRow(),0]) ]
+      @rangeCount = 1
     @rootScopes = @editor.getRootScopeDescriptor()?.getScopesArray()
     @rootScopes ?= @editor.getRootScopeDescriptor()
 
