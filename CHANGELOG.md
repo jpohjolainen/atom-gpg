@@ -1,6 +1,13 @@
 
 #### [Current]
+ * [b7cbad9](../../commit/b7cbad9) - __(Janne Pohjolainen)__ no selection operates on whole buffer
 
+#### v0.4.0
+ * [6d398c2](../../commit/6d398c2) - __(Janne Pohjolainen)__ Prepare 0.4.0 release
+ * [84afa0e](../../commit/84afa0e) - __(Janne Pohjolainen)__ changelog updated
+ * [46d6e8a](../../commit/46d6e8a) - __(Janne Pohjolainen)__ Merge pull request [#6](../../issues/6) from zipkid/feature/sign
+
+Add sign capability
  * [54eeeff](../../commit/54eeeff) - __(Stefan - Zipkid - Goethals)__ Add fix for ISSUE [#5](../../issues/5)
 
 https://github.com/jpohjolainen/atom-gpg/issues/5
