@@ -1,6 +1,6 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
 'context-menu':
-  'atom-workspace': [
+  'atom-text-editor': [
     {label: 'GPG Encrypt', command: 'atom-gpg:encrypt-selections'},
     {label: 'GPG Decrypt', command: 'atom-gpg:decrypt-selections'},
     {label: 'GPG Sign', command: 'atom-gpg:sign-selections'}
