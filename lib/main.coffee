@@ -92,7 +92,6 @@ module.exports =
     @selectedRanges = _.reject allSelectionRanges, (s) -> s.start.isEqual(s.end)
     @rangeCount = @selectedRanges.length
     if not @rangeCount
-      whole =
       @selectedRanges = [ Range([@editor.getLastBufferRow(),0]) ]
       @rangeCount = 1
     @rootScopes = @editor.getRootScopeDescriptor()?.getScopesArray()
@@ -114,13 +113,6 @@ module.exports =
       exit_cb = (code) =>
         @gpgReturn code
 
-      if func_name == 'encrypt'
-        func = gpg.encrypt
-      else if func_name == 'sign'
-        func = gpg.sign
-      else
-        func = gpg.decrypt
-
-      func text, @selectionIndex, bufferedRead, stderr_cb, exit_cb
+      gpg[func_name] text, @selectionIndex, bufferedRead, stderr_cb, exit_cb
 
       @selectionIndex++
