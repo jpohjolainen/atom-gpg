@@ -1,6 +1,21 @@
 
 #### [Current]
+ * [e6aa427](../../commit/e6aa427) - __(Janne Pohjolainen)__ sign also to activate module
+ * [ad87d8e](../../commit/ad87d8e) - __(Janne Pohjolainen)__ add commands only to text editor context menu
+ * [7aca062](../../commit/7aca062) - __(Janne Pohjolainen)__ removed empty var, sanitized gpg function call
+ * [7af57d7](../../commit/7af57d7) - __(Janne Pohjolainen)__ new keymap
+ * [2ae50d4](../../commit/2ae50d4) - __(Janne Pohjolainen)__ added info of new keymap and signing
+
+#### v0.5.0
+ * [9481ca8](../../commit/9481ca8) - __(Janne Pohjolainen)__ Prepare 0.5.0 release
+ * [3777744](../../commit/3777744) - __(Janne Pohjolainen)__ Merge pull request [#9](../../issues/9) from jpohjolainen/whole_file_when_no_selection
+
+changelog update
+ * [82b8525](../../commit/82b8525) - __(Janne Pohjolainen)__ changelog update
  * [b7cbad9](../../commit/b7cbad9) - __(Janne Pohjolainen)__ no selection operates on whole buffer
+ * [1088203](../../commit/1088203) - __(Janne Pohjolainen)__ Merge pull request [#8](../../issues/8) from jpohjolainen/whole_file_when_no_selection
+
+no selection operates on whole buffer
 
 #### v0.4.0
  * [6d398c2](../../commit/6d398c2) - __(Janne Pohjolainen)__ Prepare 0.4.0 release
