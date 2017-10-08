@@ -1,5 +1,10 @@
 
 #### [Current]
+
+
+#### v0.6.0
+ * [cdb29a0](../../commit/cdb29a0) - __(Janne Pohjolainen)__ Prepare 0.6.0 release
+ * [af1f0ce](../../commit/af1f0ce) - __(Janne Pohjolainen)__ Updated changelog
  * [e6aa427](../../commit/e6aa427) - __(Janne Pohjolainen)__ sign also to activate module
  * [ad87d8e](../../commit/ad87d8e) - __(Janne Pohjolainen)__ add commands only to text editor context menu
  * [7aca062](../../commit/7aca062) - __(Janne Pohjolainen)__ removed empty var, sanitized gpg function call
