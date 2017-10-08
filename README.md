@@ -1,6 +1,6 @@
 # atom-gpg package
 
-GPG Encryption for Atom. Encrypts and decrypts selected text.
+GPG Encryption for Atom. Encrypts, decrypts and signs selected text.
 
 ## Install
 
@@ -34,13 +34,14 @@ Or install trough Atom Packages.
 
 ## Usage
 
-Select text and press ```ctrl-shift-e``` to encrypt or ```ctrl-shift-d``` to decrypt. NEW: If no text is selected,
-operations are done on whole buffer.
+Select text and press ```alt-shift-e``` to encrypt, ```alt-shift-d``` to decrypt and ```alt-shift-s``` to sign.
+If no text is selected, operations are done on whole buffer.
+Note: keymap changed on 0.7.0 from ctrl-shift to alt-shift.
 
-Optionally you can also use context menu with right mouse button and select either _GPG Encrypt_ or
-_GPG Decrypt_. Same options can be found under menu __Packages__ -> __GPG__.
+Optionally you can also use context menu with right mouse button and select either _GPG Encrypt_,
+_GPG Decrypt_ or _GPG Sign_. Same options can be found under menu __Packages__ -> __GPG__.
 
-You can encrypt and decrypt multiple selections.
+You can encrypt, decrypt and sign multiple selections.
 
 NOTE: If Atom fails to find GPG in the PATH, you can set the path to the binary in Settings page!
 
