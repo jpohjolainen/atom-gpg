@@ -8,7 +8,8 @@
   "activationCommands": {
     "atom-text-editor": [
       "atom-gpg:encrypt-selections",
-      "atom-gpg:decrypt-selections"
+      "atom-gpg:decrypt-selections",
+      "atom-gpg:sign-selections"
     ]
   },
   "engines": {
