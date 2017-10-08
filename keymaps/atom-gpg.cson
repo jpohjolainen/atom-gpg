@@ -1,6 +1,6 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-text-editor':
-  'ctrl-E': 'atom-gpg:encrypt-selections'
-  'ctrl-D': 'atom-gpg:decrypt-selections'
-  'ctrl-S': 'atom-gpg:sign-selections'
+  'alt-shift-E': 'atom-gpg:encrypt-selections'
+  'alt-shift-D': 'atom-gpg:decrypt-selections'
+  'alt-shift-S': 'atom-gpg:sign-selections'
